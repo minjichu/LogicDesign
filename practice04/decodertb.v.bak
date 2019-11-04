@@ -1,0 +1,46 @@
+module tb_dec3to8;
+
+
+reg		[2:0]	   in;
+reg				  en ;
+
+wire	[7:0]	 out1;
+wire	[7:0]	 out2;
+
+dec3to8_shift dut_1	(	.in		(in ),
+							.en		(en ),
+							.out	(out1));
+
+dec3to8_case dut_2		(	.in		(in ),
+							.en		(en ),
+							.out	(out2));
+
+initial begin
+
+		$display ("using dec3to8_shift: out1 ");
+		$display ("using dec3to8_case	: out2 ");
+		$display ("==============================================================");
+		$display (" en  in[2]   in[1]   in[0]  	out1   out2   ");
+		$display ("==============================================================");
+		#(50)	{en,in[2],in[1],in[0]} =4'b 0000;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 0001;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 0010;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 0011;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 0100;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 0101;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 0110;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 0111;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 1000;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 1001;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 1010;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 1011;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 1100;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 1101;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 1110;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	{en,in[2],in[1],in[0]} =4'b 1111;	#(50)	$display("%b\t%b\t%b\t%b\t%b\t%b", en,in[2],in[1],in[0],out1,out2);
+		#(50)	$finish ;
+end 
+
+endmodule 
+
+
