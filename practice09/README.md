@@ -5,4 +5,4 @@
 
 
 > Written with [StackEdit](https://stackedit.io/).
-<!https://github.com/minjichu/LogicDesign/blob/master/practice09/figure/캡처.PNG>
+![](https://github.com/minjichu/LogicDesign/blob/master/practice09/figure/캡처.PNG)
